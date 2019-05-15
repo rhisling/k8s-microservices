@@ -1,4 +1,4 @@
-#what do we want?
+# What do want?
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -9,9 +9,9 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 20Gi
 ---
-# How do we want it?
+# How do we want it implemented
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -19,9 +19,9 @@ metadata:
 spec:
   storageClassName: mylocalstorage
   capacity:
-    storage: 2Gi
+    storage: 20Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: '/mnt/some/dir'
+    path: "/mnt/some new/directory/structure/"
     type: DirectoryOrCreate
